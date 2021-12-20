@@ -18,7 +18,7 @@ export default function Home({ data }) {
           <Typography variant="h5">Around the world</Typography>
           <Grid container spacing={3}>
             {data.map((at) => (
-              <Grid md={4}>
+              <Grid md={4} key={at.id}>
                 <CardItem key={at.id} at={at} />
               </Grid>
             ))}
