@@ -1,4 +1,5 @@
 import React from "react";
+import Link from 'next/link'
 import {
   Card,
   CardActions,
@@ -11,7 +12,7 @@ import {
 
 export default function CardItem({at}) {
   return (
-    <Box mt={2}>
+    <Box mt={2} mx={2}>
       <Card sx={{ maxWidth: 345 }}>
         <CardMedia
           component="img"
@@ -28,7 +29,9 @@ export default function CardItem({at}) {
           </Typography>
         </CardContent>
         <CardActions>
-          <Button size="small">Learn More</Button>
+          <Link href={`/${at.id}`}>
+              <Button size="small">Learn More</Button>
+          </Link>
         </CardActions>
       </Card>
     </Box>

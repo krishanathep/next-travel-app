@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Navbar from "../src/Navbar";
 import CardItem from "../src/CardItem";
-import { Container, Typography } from "@material-ui/core";
+import { Container, Typography, Box, Grid } from "@material-ui/core";
 
 export default function Home({ data }) {
   return (
@@ -14,10 +14,16 @@ export default function Home({ data }) {
 
       <Navbar />
       <Container>
-        <Typography variant="h5">Around the world</Typography>
-        {data.map((at) => (
-          <CardItem key={at.id} at={at} /> 
-        ))}
+        <Box mt={2}>
+          <Typography variant="h5">Around the world</Typography>
+          <Grid container spacing={3}>
+            {data.map((at) => (
+              <Grid md={4}>
+                <CardItem key={at.id} at={at} />
+              </Grid>
+            ))}
+          </Grid>
+        </Box>
       </Container>
     </div>
   );
